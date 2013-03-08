@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style type="text/css">
+      .item-grid { 
+        background-color: #E0CAAC;
+        width: 100%;
+        padding: 0; 
+        margin: 0; 
+        
+      }
+
+      .item-grid li,
+      .item-grid div {
+        background-color: #666;
+        height: 200px;
+        width: 225px;
+        list-style-type: none;
+        margin: 0 20px 20px 0;
+        padding: 0;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        vertical-align: top;
+      }
+      @media only screen and (max-width: 768px) { .item-grid { width: 100%; } }
+
+    </style>
+    <script src="/jquery-1.9.1.js"></script>
+    <script src="gridem.js"></script>
+
+    <script>
+    <!--
+      $(document).ready(function() {
+        //randSize('width', 100, 200);
+        //randSize('height', 100, 200);
+        $(window).load(function() {
+          $('.item-grid').each(function() { 
+            $(this).gridEm( { min_margin: 25 }); 
+          });
+          showInfo();
+        });
+        $(window).resize( function () { 
+          $('.item-grid').each( function() { 
+            $(this).gridEm( { min_margin: 25 } ); 
+          });
+        });
+
+        // Randomizes sizes of element
+        function randSize(direction, min_size, max_size) {
+          $('.item-grid').children().each(function() {
+            new_size = Math.floor(Math.random()*max_size+min_size);
+            $(this).css(direction, new_size + 'px');
+          });
+        }
+
+        // Show grid item info
+        function showInfo() {
+          $('.item-grid').children().each(function() {
+            $(this).append("margin: " + $(this).css('margin-right') + "<br />");
+            $(this).append("width: " + $(this).css('width') + "<br />");
+            $(this).append("height: " + $(this).css('height') + "<br />");
+          });
+        }
+      });
+      // -->
+    </script>
+  </head>
+  <body>
+    <ul class="item-grid">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li><p>Some Content</p></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <div><p>That's not right</p></div>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
