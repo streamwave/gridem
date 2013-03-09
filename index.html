@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <style type="text/css">
+      .small-grid,
       .item-grid { 
         background-color: #E0CAAC;
         width: 100%;
@@ -13,6 +14,7 @@
         
       }
 
+      .small-grid li,
       .item-grid li,
       .item-grid div {
         background-color: #666;
@@ -26,6 +28,14 @@
         zoom: 1;
         vertical-align: top;
       }
+
+      .small-grid { background-color: #C9D4EA; }
+      .small-grid li { 
+        background-color: #6FC696; 
+        width: 75px;
+        height: 75px;
+      }
+
       @media only screen and (max-width: 768px) { .item-grid { width: 100%; } }
 
     </style>
@@ -38,8 +48,16 @@
         //randSize('width', 100, 200);
         //randSize('height', 100, 200);
         $(window).load(function() {
+          $('.empty-grid').each(function() {
+            $(this).gridEm();
+          });
+
           $('.item-grid').each(function() { 
             $(this).gridEm( { min_margin: 25 }); 
+          });
+
+          $('.small-grid').each(function() {
+            $(this).gridEm( { min_margin: 50, max_margin: 50 });
           });
           showInfo();
         });
@@ -47,6 +65,10 @@
           $('.item-grid').each( function() { 
             $(this).gridEm( { min_margin: 25 } ); 
           });
+          $('.small-grid').each(function() {
+            $(this).gridEm( { min_margin: 50, max_margin: 50 });
+          });
+          showInfo();
         });
 
         // Randomizes sizes of element
@@ -60,9 +82,14 @@
         // Show grid item info
         function showInfo() {
           $('.item-grid').children().each(function() {
-            $(this).append("margin: " + $(this).css('margin-right') + "<br />");
+            $(this).html("margin: " + $(this).css('margin-right') + "<br />");
             $(this).append("width: " + $(this).css('width') + "<br />");
             $(this).append("height: " + $(this).css('height') + "<br />");
+          });
+          $('.small-grid').children().each(function() {
+            $(this).html("m: " + $(this).css('margin-right') + "<br />");
+            $(this).append("w: " + $(this).css('width') + "<br />");
+            $(this).append("h: " + $(this).css('height') + "<br />");
           });
         }
       });
@@ -70,6 +97,22 @@
     </script>
   </head>
   <body>
+    <ul class="empty-grid"></ul>
+
+    <ul class="small-grid">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
     <ul class="item-grid">
       <li></li>
       <li></li>
@@ -85,5 +128,7 @@
       <li></li>
       <li></li>
     </ul>
+
+
   </body>
 </html>
