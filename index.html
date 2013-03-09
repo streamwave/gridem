@@ -53,29 +53,29 @@
           });
 
           $('.item-grid').each(function() { 
-            $(this).gridEm( { min_margin: 25 }); 
+            $(this).gridEm( { minMargin: 25 }); 
           });
 
           $('.small-grid').each(function() {
-            $(this).gridEm( { min_margin: 50, max_margin: 50 });
+            $(this).gridEm( { minMargin: 50, maxMargin: 50 });
           });
           showInfo();
         });
         $(window).resize( function () { 
           $('.item-grid').each( function() { 
-            $(this).gridEm( { min_margin: 25 } ); 
+            $(this).gridEm( { minMargin: 25 } ); 
           });
           $('.small-grid').each(function() {
-            $(this).gridEm( { min_margin: 50, max_margin: 50 });
+            $(this).gridEm( { minMargin: 50, maxMargin: 50 });
           });
           showInfo();
         });
 
         // Randomizes sizes of element
-        function randSize(direction, min_size, max_size) {
+        function randSize( direction, minSize, maxSize ) {
           $('.item-grid').children().each(function() {
-            new_size = Math.floor(Math.random()*max_size+min_size);
-            $(this).css(direction, new_size + 'px');
+            newSize = Math.floor(Math.random()*maxSize+minSize);
+            $(this).css(direction, newSize + 'px');
           });
         }
 
