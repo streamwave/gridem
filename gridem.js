@@ -34,8 +34,8 @@
     if (!$grid.children().length) return;
 
     var settings = $.extend( {
-      'minMargin'     :  10,
-      'maxMargin'     : 100
+      'minMargin' :  10,
+      'maxMargin' : 100
     }, options);
 
     var inlineQuirk = 0
@@ -60,7 +60,7 @@
 
     if (itemsPerRow > 1) {
       itemMargin = Math.floor((gridWidth - allItemsWidth) / (itemsPerRow - 1));
-      freeSpace = gridWidth - allItemsWidth;
+      freeSpace  = gridWidth - allItemsWidth;
     } else {
       applyNewMargin($grid, { itemMargin: settings.minMargin });
       return;
@@ -73,8 +73,8 @@
 
       if (itemsPerRow > 1) {
         allItemsWidth = itemsPerRow * itemWidth;
-        itemMargin = Math.floor((gridWidth - allItemsWidth) / (itemsPerRow - 1));
-        freeSpace = gridWidth - allItemsWidth;
+        itemMargin    = Math.floor((gridWidth - allItemsWidth) / (itemsPerRow - 1));
+        freeSpace     = gridWidth - allItemsWidth;
 
       } else if (1 == itemsPerRow) {
         // We might need to force some margins to ensure single column display
@@ -110,8 +110,8 @@
 
     var settings = $.extend( {
       'itemsPerRow' : 1,
-      'itemMargin'   : 0,
-      'roundingAdj'  : 0
+      'itemMargin'  : 0,
+      'roundingAdj' : 0
     }, options);
 
     var i=0;
