@@ -1,8 +1,7 @@
 /*!
  * Grid 'Em - jQuery Plugin
  * 
- * Author: Yves Dagenais <yves@streamwave.com>
- * Copyright (c) 2013 Streamwave Communications Corp. <info@streamwave.com>
+ * Copyright (c) 2013 Yves Dagenais <yves@streamwave.com>
  */
 (function( $ ) {
 
@@ -56,32 +55,29 @@
 
     if (itemsPerRow > itemCount) itemsPerRow = itemCount;
 
-    var allItemsWidth = itemsPerRow * itemWidth;
-
-    if (itemsPerRow > 1) {
-      itemMargin = Math.floor((gridWidth - allItemsWidth) / (itemsPerRow - 1));
-      freeSpace  = gridWidth - allItemsWidth;
-    } else {
+    // We don't have much to do if there's only one item per row.
+    if (itemsPerRow <= 1) {
       applyNewMargin($grid, { itemMargin: settings.minMargin });
       return;
     }
-
+    
     // We may need to redistribute items on rows if we're below our min margin.
     var retryLimit = itemCount;
     while (itemMargin < settings.minMargin) {
-      itemsPerRow--;
-
+      
       if (itemsPerRow > 1) {
-        allItemsWidth = itemsPerRow * itemWidth;
-        itemMargin    = Math.floor((gridWidth - allItemsWidth) / (itemsPerRow - 1));
-        freeSpace     = gridWidth - allItemsWidth;
+        var allItemsWidth = itemsPerRow * itemWidth;
+        itemMargin = Math.floor( (gridWidth - allItemsWidth) / (itemsPerRow - 1) );
+        freeSpace  = gridWidth - allItemsWidth;
 
       } else if (1 == itemsPerRow) {
         // We might need to force some margins to ensure single column display
         if (freeSpace > settings.minMargin) itemMargin = settings.minMargin;
       }
+
       retryLimit--;
       if (retryLimit <= 0 || itemsPerRow <= 1) break;
+      if (itemMargin < settings.minMargin) itemsPerRow--;
     }
 
     if (itemMargin > settings.maxMargin) { itemMargin = settings.maxMargin; } 
@@ -114,12 +110,13 @@
       'roundingAdj' : 0
     }, options);
 
-    var i=0;
+    var i=0;    
     $grid.children().each(function() { 
       i++;
+
       if (i < settings.itemsPerRow || 1 == settings.itemsPerRow) {
         var newMargin = settings.itemMargin;
-        if (1==i) newMargin+=settings.roundingAdj;
+        if (1==i) newMargin += settings.roundingAdj;
         $(this).css('margin-right', newMargin + 'px');
       }else {
         $(this).css('margin-right', 0);
