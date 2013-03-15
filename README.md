@@ -1,6 +1,6 @@
 # jQuery Grid 'Em Plugin
 
-This is a simple jQuery plugin that allows you to evenly apply horizontal spacing on a list of items across multiple rows on a page.
+This is a simple jQuery plugin that allows you to evenly apply horizontal spacing on a list of items across multiple rows on a page. Check out the [demo site](http://streamwave.github.com/gridem/ "jQuery gridEm() demo").
 
 ## How to use this plugin
 

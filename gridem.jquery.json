@@ -29,6 +29,7 @@
   ],
   "bugs": "https://github.com/streamwave/gridem/issues",
   "homepage": "https://github.com/streamwave/gridem",
+  "demo": "http://streamwave.github.com/gridem",
   "docs": "https://github.com/streamwave/gridem",
   "download": "https://github.com/streamwave/gridem",
   "dependencies": {
