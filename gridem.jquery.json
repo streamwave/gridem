@@ -1,14 +1,14 @@
 {
   "name": "gridem",
   "title": "jQuery Grid 'Em",
-  "description": "A simple jQuery plugin to evenly space out a list of item blocks (ie: products) on a page",
+  "description": "A simple jQuery plugin that allows you to evenly apply horizontal spacing on a list of items (ie: products) across multiple rows on a page.",
   "keywords": [
     "grid",
     "even",
     "products",
     "horizontal"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Streamwave",
     "email": "info@streamwave.com",
@@ -24,7 +24,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/streamwave/gridem/LICENSE"
+      "url": "https://github.com/streamwave/gridem/blob/master/LICENSE"
     }
   ],
   "bugs": "https://github.com/streamwave/gridem/issues",
