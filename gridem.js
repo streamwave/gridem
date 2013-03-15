@@ -1,7 +1,10 @@
 /*!
  * Grid 'Em - jQuery Plugin
+ * https://github.com/streamwave/gridem
  * 
- * Copyright (c) 2013 Yves Dagenais <yves@streamwave.com>
+ * Copyright (c) 2013 Streamwave Communications Corp. <info@streamwave.com>
+ * Licensed under the MIT license.
+ * 
  */
 (function( $ ) {
 

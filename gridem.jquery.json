@@ -10,10 +10,17 @@
   ],
   "version": "1.0.0",
   "author": {
-    "name": "Yves Dagenais",
-    "email": "yves@streamwave.com",
+    "name": "Streamwave",
+    "email": "info@streamwave.com",
     "url": "http://www.streamwave.com"
   },
+  "maintainers": [
+    {
+      "name": "Yves Dagenais",
+      "email": "yves@streamwave.com",
+      "url": "https://github.com/ydagenais"
+    }
+  ],
   "licenses": [
     {
       "type": "MIT",
