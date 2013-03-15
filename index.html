@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>jQuery Grid 'Em Plugin Demo</title>
+    <link href="demo.css" type="text/css" rel="stylesheet" media="screen" />
+  </head>
+  <body>
+    <h1>jQuery Grid 'Em Plugin Demo</h1>
+    <p>Try resizing the width of the page to see <a href="https://github.com/streamwave/gridem">Grid 'Em</a> in action.</p>
+
+    <ul class="small-grid">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <ul class="item-grid">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <!-- Main jQuery Library -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <!-- Grid 'Em Plugin -->
+    <script src="gridem.js"></script>
+
+    <script>
+    <!--
+      $(document).ready(function() {
+
+        // Randomize the height of our demo items
+        randSize('height', 150, 200);
+
+        // Apply gridEm() once the page has completely loaded
+        $(window).load(function() {
+          $('.empty-grid').each(function() {
+            $(this).gridEm();
+          });
+
+          $('.item-grid').each(function() { 
+            $(this).gridEm( { minMargin: 25 }); 
+          });
+
+          $('.small-grid').each(function() {
+            $(this).gridEm( { minMargin: 10, maxMargin: 50 } );
+          });
+        });
+
+        // Apply gridEm() when the window size changes
+        $(window).resize( function () { 
+          $('.item-grid').each( function() { 
+            $(this).gridEm( { minMargin: 25 } ); 
+          });
+          $('.small-grid').each(function() {
+            $(this).gridEm( { minMargin: 10, maxMargin: 50 } );
+          });
+        });
+
+        // Randomizes sizes of element
+        function randSize( direction, minSize, maxSize ) {
+          $('.item-grid').children().each(function() {
+            newSize = Math.floor(Math.random()*maxSize+minSize);
+            $(this).css(direction, newSize + 'px');
+          });
+        }
+
+      });
+      // -->
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-6330490-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
